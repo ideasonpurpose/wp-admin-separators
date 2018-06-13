@@ -1,0 +1,22 @@
+{
+  "name": "wp-admin-separators",
+  "version": "1.0.0",
+  "description": "A simple class for injecting separators into the WordPress admin dashboard menu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ideasonpurpose/wp-admin-separators.git"
+  },
+  "author": "Joe Maller <joe@joemaller.com> (http://www.joemaller.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ideasonpurpose/wp-admin-separators/issues"
+  },
+  "homepage": "https://github.com/ideasonpurpose/wp-admin-separators#readme",
+  "dependencies": {
+    "version-everything": "^0.2.2"
+  }
+}
