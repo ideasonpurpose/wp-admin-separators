@@ -25,6 +25,7 @@ jobs:
       - name: npm install & test
         run: |
           npm ci
+          composer install
           phpunit
       
       - name: Coveralls
