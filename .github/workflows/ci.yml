@@ -35,6 +35,12 @@ jobs:
           XDEBUG_MODE: coverage
         run: vendor/bin/phpunit
 
+
+      - name: Coddle Coveralls
+        run: |
+          mkdir -p build/logs
+          cp coverage.xml build/logs/clover.xml
+
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
