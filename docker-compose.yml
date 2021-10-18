@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  composer:
+    image: composer
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      COMPOSER_HOME: /.composer
+    volumes:
+      - ./:/app
+      - ~/.composer:/.composer
+    command: install
+
+  test:
+    build: .
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    entrypoint: []
+    command: vendor/bin/phpunit

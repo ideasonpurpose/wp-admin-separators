@@ -1,19 +1,34 @@
 {
-    "name": "ideasonpurpose/wp-admin-separators",
-    "description": "A simple class for injecting separators into the WordPress admin dashboard menu.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Joe Maller",
-            "email": "joe@ideasonpurpose.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "ideasonpurpose\\": "src"
-        }
+  "name": "ideasonpurpose/wp-admin-separators",
+  "description": "A simple class for injecting separators into the WordPress admin dashboard menu.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Joe Maller",
+      "email": "joe@ideasonpurpose.com"
+    },
+    {
+      "name": "Ideas On Purpose",
+      "homepage": "https://www.ideasonpurpose.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "IdeasOnPurpose\\WP\\Admin\\": "src"
+    }
+  },
+  "require-dev": {
+    "kint-php/kint": "^3.3",
+    "phpunit/phpunit": "^9.5.10",
+    "ideasonpurpose/wp-test-stubs": "dev-main"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/ideasonpurpose/wp-test-stubs"
+    }
+  ]
 }

@@ -2,21 +2,54 @@
   "name": "wp-admin-separators",
   "version": "1.0.0",
   "description": "A simple class for injecting separators into the WordPress admin dashboard menu.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [
+    "Ideas On Purpose",
+    "init",
+    "wordpress",
+    "admin",
+    "separators",
+    "dashboard"
+  ],
+  "homepage": "https://github.com/ideasonpurpose/wp-admin-separators#readme",
+  "bugs": {
+    "url": "https://github.com/ideasonpurpose/wp-admin-separators/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ideasonpurpose/wp-admin-separators.git"
   },
-  "author": "Joe Maller <joe@joemaller.com> (http://www.joemaller.com)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ideasonpurpose/wp-admin-separators/issues"
+  "author": "Ideas On Purpose (https://www.ideasonpurpose.com)",
+  "contributors": [
+    "Joe Maller <joe@ideasonpurpose.com>"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "composer": "npm run composer:install",
+    "composer:install": "docker-compose run --rm composer",
+    "composer:require": "docker-compose run --rm composer require",
+    "composer:update": "docker-compose run --rm composer update",
+    "test": "docker-compose run test || exit 0",
+    "posttest": "replace-in-file '<file name=\"/app/' '<file name=\"./' coverage.xml --quiet",
+    "test:watch": "chokidar '{src,tests}/**/*.php' -c 'npm run test'",
+    "version": "version-everything && auto-changelog && git add -u"
   },
-  "homepage": "https://github.com/ideasonpurpose/wp-admin-separators#readme",
-  "dependencies": {
-    "version-everything": "^0.2.2"
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.17.5",
+    "auto-changelog": "^2.3.0",
+    "chokidar-cli": "^3.0.0",
+    "prettier": "^2.4.1",
+    "pretty-hrtime": "^1.0.3",
+    "replace-in-file": "^6.2.0",
+    "version-everything": "^0.6.4"
+  },
+  "auto-changelog": {
+    "package": true,
+    "backfillLimit": 7
+  },
+  "version-everything": {
+    "files": [
+      "README.md"
+    ]
   }
 }
