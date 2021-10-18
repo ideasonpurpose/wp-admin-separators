@@ -12,30 +12,30 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Node Setup
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
+      - name: Validate composer.json and composer.lock
+        run: composer validate
 
-      # Runs a set of commands using the runners shell
-      - name: npm install & test
-        run: |
-          npm ci
-          composer install
-          phpunit
-      
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run test suite
+        env: 
+          XDEBUG_MODE: coverage
+        run: vendor/bin/phpunit
+
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Code Climate
-        uses: paambaati/codeclimate-action@v2.7.5
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-
-
