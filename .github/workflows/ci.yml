@@ -2,7 +2,7 @@ name: Test Coverage
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [master, main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,23 +31,21 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Run test suite
-        env: 
+        env:
           XDEBUG_MODE: coverage
         run: vendor/bin/phpunit
-
 
       - name: Coddle Coveralls
         run: |
           mkdir -p build/logs
           cp coverage.xml build/logs/clover.xml
 
-#       - name: Coveralls
-#         uses: coverallsapp/github-action@master
-#         with:
-#           github-token: ${{ secrets.GITHUB_TOKEN }}
-
+      # Note: The coveralls action did not work. This step installs
+      # php-converalls, then sends the clover formatted coverage data
+      # directly. COVERALLS_TOKEN is a secret value from here:
+      # https://coveralls.io/github/ideasonpurpose/wp-admin-separators
       - name: Upload to Coveralls
-        env: 
+        env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
           COVERALLS_RUN_LOCALLY: yes
         run: |
