@@ -1,8 +1,8 @@
-version: "3.7"
-
 services:
   composer:
-    image: composer
+    # https://hub.docker.com/_/composer
+    #https://github.com/docker-library/php
+    image: composer:2.1.9
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       COMPOSER_HOME: /.composer
