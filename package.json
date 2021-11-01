@@ -26,21 +26,47 @@
   "main": "index.js",
   "scripts": {
     "composer": "npm run composer:install",
-    "composer:install": "docker-compose run --rm composer",
-    "composer:require": "docker-compose run --rm composer require",
-    "composer:update": "docker-compose run --rm composer update",
-    "test": "docker-compose run test || exit 0",
+    "composer:install": "docker compose run --rm composer",
+    "composer:require": "docker compose run --rm composer require",
+    "composer:update": "docker compose run --rm composer update",
+    "test": "docker compose run test",
     "posttest": "replace-in-file '<file name=\"/app/' '<file name=\"./' coverage.xml --quiet",
     "test:watch": "chokidar '{src,tests}/**/*.php' -c 'npm run test'",
     "version": "version-everything && auto-changelog && git add -u"
   },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "printWidth": 120,
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": "*.md",
+        "options": {
+          "embeddedLanguageFormatting": "off"
+        }
+      },
+      {
+        "files": "*.php",
+        "options": {
+          "printWidth": 100,
+          "singleQuote": true,
+          "tabWidth": 4,
+          "trailingCommaPHP": true
+        }
+      }
+    ]
+  },
   "devDependencies": {
-    "@prettier/plugin-php": "^0.17.5",
+    "@prettier/plugin-php": "^0.17.6",
     "auto-changelog": "^2.3.0",
     "chokidar-cli": "^3.0.0",
     "prettier": "^2.4.1",
     "pretty-hrtime": "^1.0.3",
-    "replace-in-file": "^6.2.0",
+    "replace-in-file": "^6.3.2",
     "version-everything": "^0.6.4"
   },
   "auto-changelog": {
