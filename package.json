@@ -1,6 +1,6 @@
 {
   "name": "wp-admin-separators",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple class for injecting separators into the WordPress admin dashboard menu.",
   "keywords": [
     "Ideas On Purpose",
@@ -78,6 +78,5 @@
       "README.md"
     ]
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
