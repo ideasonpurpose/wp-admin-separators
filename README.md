@@ -1,6 +1,6 @@
 # wp-admin-separators
 
-#### Version: 1.0.2
+#### Version: 1.0.3
 
 [![Coverage Status](https://coveralls.io/repos/github/ideasonpurpose/wp-admin-separators/badge.svg?branch=master)](https://coveralls.io/github/ideasonpurpose/wp-admin-separators?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/21c9b4cdd2e067692a17/maintainability)](https://codeclimate.com/github/ideasonpurpose/wp-admin-separators/maintainability)
