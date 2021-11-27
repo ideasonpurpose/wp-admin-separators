@@ -49,5 +49,5 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
           COVERALLS_RUN_LOCALLY: yes
         run: |
-          composer require 'php-coveralls/php-coveralls:^2.5.1'
+          composer require 'php-coveralls/php-coveralls:2.4.3'
           vendor/bin/php-coveralls -v
