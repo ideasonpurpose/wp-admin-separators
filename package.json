@@ -32,6 +32,7 @@
     "test": "docker compose run test",
     "posttest": "replace-in-file '/<file name=\"\\/app\\//g' '<file name=\"./' coverage.xml --quiet --isRegex",
     "test:watch": "chokidar '{src,tests}/**/*.php' -c 'npm run test'",
+    "preversion": "docker compose run --rm composer validate",
     "version": "version-everything && auto-changelog && git add -u"
   },
   "prettier": {
