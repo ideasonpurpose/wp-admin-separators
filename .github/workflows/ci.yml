@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run test suite
         env:
@@ -49,5 +49,5 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
           COVERALLS_RUN_LOCALLY: yes
         run: |
-          composer require --dev php-coveralls/php-coveralls
+          composer require 'php-coveralls/php-coveralls:^2.5.1'
           vendor/bin/php-coveralls -v
