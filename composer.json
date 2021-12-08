@@ -27,7 +27,7 @@
   },
   "archive": {
     "exclude": [
-      "/.github",
+      "/.git*",
       "/tests",
       "CHANGELOG.md",
       "docker-compose.yml",
