@@ -5,12 +5,12 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Joe Maller",
-      "email": "joe@ideasonpurpose.com"
-    },
-    {
       "name": "Ideas On Purpose",
       "homepage": "https://www.ideasonpurpose.com"
+    },
+    {
+      "name": "Joe Maller",
+      "email": "joe@ideasonpurpose.com"
     }
   ],
   "minimum-stability": "dev",
@@ -25,10 +25,15 @@
     "phpunit/phpunit": "^9.5.10",
     "ideasonpurpose/wp-test-stubs": "dev-main@dev"
   },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/ideasonpurpose/wp-test-stubs"
-    }
-  ]
+  "archive": {
+    "exclude": [
+      "/.github",
+      "/tests",
+      "CHANGELOG.md",
+      "docker-compose.yml",
+      "Dockerfile",
+      "package*",
+      "phpunit.xml"
+    ]
+  }
 }
