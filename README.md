@@ -2,8 +2,11 @@
 
 #### Version: 1.0.6
 
-[![Coverage Status](https://coveralls.io/repos/github/ideasonpurpose/wp-admin-separators/badge.svg?branch=master)](https://coveralls.io/github/ideasonpurpose/wp-admin-separators?branch=master)
+[![Packagist](https://badgen.net/packagist/v/ideasonpurpose/wp-admin-separators)](https://packagist.org/packages/ideasonpurpose/wp-admin-separators)
+[![codecov](https://codecov.io/gh/ideasonpurpose/wp-admin-separators/branch/master/graph/badge.svg)](https://codecov.io/gh/ideasonpurpose/wp-admin-separators)
+[![Coverage Status](https://coveralls.io/repos/github/ideasonpurpose/wp-admin-separators/badge.svg)](https://coveralls.io/github/ideasonpurpose/wp-admin-separators)
 [![Maintainability](https://api.codeclimate.com/v1/badges/21c9b4cdd2e067692a17/maintainability)](https://codeclimate.com/github/ideasonpurpose/wp-admin-separators/maintainability)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 A simple class for injecting separators into the WordPress admin dashboard menu
 
@@ -11,20 +14,10 @@ String values will be rejected. Float arguments will be passed without modificat
 
 ## Usage
 
-Add this repository to the project's **composer.json** file and require the library.
+This library is available on [Packagist](https://packagist.org/packages/ideasonpurpose/wp-admin-separators), to use it, require it in **composer.json** or tell Composer to load the package:
 
-```json
-{
-  "require-dev": {
-    "ideasonpurpose/wp-admin-separators": "^1.0.0"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/ideasonpurpose/wp-admin-separators"
-    }
-  ]
-}
+```bash
+$ composer require ideasonpurpose/wp-admin-separators
 ```
 
 Then add separators to the admin like this:
@@ -35,4 +28,4 @@ use IdeasOnPurpose\WP\Admin;
 new Separators(25, 26);
 ```
 
-Arguments can also be an array, a mix of integers and arrays or number-ish strings.
+Arguments can also be an array, a mix of integers and arrays, or number-ish strings.
