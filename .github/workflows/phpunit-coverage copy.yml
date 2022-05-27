@@ -17,12 +17,13 @@ jobs:
         run: composer global require phpunit/phpunit --prefer-dist
         
       - name: Update $PATH
-        run: echo "$GITHUB_WORKSPACE/.composer/vendor/bin" >> $GITHUB_PATH
+        run: echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
 
       - name: new Composer?
         run: |
           ~/.composer/vendor/bin/phpunit --version
           phpunit --version
+          echo $PATH
 
       - name: Validate composer.json and composer.lock
         run: composer validate
