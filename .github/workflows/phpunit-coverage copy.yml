@@ -14,7 +14,10 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Which PHPUnit?
-        run: which phpunit
+        run: | 
+          which phpunit
+          phpunit --version
+          composer config --list --global
         
       - name: Global install PHPUnit
         run: composer global require phpunit/phpunit --prefer-dist
