@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: Which PHPUnit?
+        run: which phpunit
+        
       - name: Global install PHPUnit
         run: composer global require phpunit/phpunit --prefer-dist
 
