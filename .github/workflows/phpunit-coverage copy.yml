@@ -21,6 +21,10 @@ jobs:
         
       - name: Global install PHPUnit
         run: composer global require phpunit/phpunit --prefer-dist
+        
+      - name: new Composer?
+        run: |
+          ~/.composer/vendor/bin/composer --version
 
       - name: Validate composer.json and composer.lock
         run: composer validate
