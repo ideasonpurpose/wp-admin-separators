@@ -24,7 +24,8 @@ jobs:
         
       - name: new Composer?
         run: |
-          ~/.composer/vendor/bin/composer --version
+          ls -la ~/.composer
+          ls -la ~/.composer/vendor
 
       - name: Validate composer.json and composer.lock
         run: composer validate
