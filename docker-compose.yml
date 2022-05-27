@@ -11,10 +11,7 @@ services:
     command: install
 
   test:
-    build: .
-    user: "${UID:-1000}:${GID:-1000}"
+    # image: ideasonpurpose/phpunit-watch:dev
+    image: ideasonpurpose/phpunit-watch:0.2.0
     volumes:
       - ./:/app
-    working_dir: /app
-    entrypoint: []
-    command: vendor/bin/phpunit
