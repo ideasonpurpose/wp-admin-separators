@@ -25,7 +25,7 @@ jobs:
       - name: new Composer?
         run: |
           ls -la ~/.composer/vendor/bin
-          ~/.composer/vendor/bin/composer --version
+          ~/.composer/vendor/bin/phpunit --version
 
       - name: Validate composer.json and composer.lock
         run: composer validate
@@ -36,7 +36,7 @@ jobs:
       - name: Run test suite
         env:
           XDEBUG_MODE: coverage
-        run: phpunit
+        run: ~/.composer/vendor/bin/phpunit
 
       # The Coveralls repo token is found  on the project's Settings page
       - name: Upload to Coveralls
