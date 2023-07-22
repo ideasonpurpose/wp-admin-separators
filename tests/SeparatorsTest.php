@@ -22,11 +22,11 @@ final class SeparatorsTest extends TestCase
 
     public function testInsertOneSeparator()
     {
-        global $actions, $menu;
+        global $actions;
         new Separators(23);
         $expected = [23];
 
-        $this->assertEquals($expected, $actions[0]["action"][0]->seps);
+        $this->assertEquals($expected, $actions[0]['action'][0]->seps);
     }
 
     public function testInsertTwoSeparators()
@@ -40,7 +40,7 @@ final class SeparatorsTest extends TestCase
 
     public function testInsertMixedSeparators()
     {
-        $Seps = new Separators(25, "26", [27, "28"]);
+        $Seps = new Separators(25, '26', [27, '28']);
         $expected = [25, 26, 27, 28];
 
         $this->assertCount(count($expected), $Seps->seps);
@@ -49,7 +49,7 @@ final class SeparatorsTest extends TestCase
 
     public function testInsertMixedDuplicates()
     {
-        $Seps = new Separators(25, "25", "26", 26);
+        $Seps = new Separators(25, '25', '26', 26);
         $expected = [25, 26];
 
         $this->assertCount(count($expected), $Seps->seps);
@@ -103,7 +103,7 @@ final class SeparatorsTest extends TestCase
 
     public function testSkipNonNumericArgs()
     {
-        $Seps = new Separators(22, "Stella", 23);
+        $Seps = new Separators(22, 'Stella', 23);
         $expected = [22, 23];
 
         $this->assertCount(count($expected), $Seps->seps);
@@ -118,8 +118,8 @@ final class SeparatorsTest extends TestCase
 
         $lastAction = array_pop($actions);
 
-        $this->assertArrayHasKey("add", $lastAction);
-        $this->assertEquals($lastAction["add"], "admin_enqueue_scripts");
+        $this->assertArrayHasKey('add', $lastAction);
+        $this->assertEquals($lastAction['add'], 'admin_enqueue_scripts');
     }
 
     public function testAddSeparators()
@@ -129,7 +129,7 @@ final class SeparatorsTest extends TestCase
         $Seps->addSeparators();
 
         $this->assertCount(2, $menu);
-        $this->assertContains("wp-menu-separator", end($menu));
+        $this->assertContains('wp-menu-separator', end($menu));
     }
 
     public function testAddFloatSeparator()
