@@ -1,6 +1,6 @@
 # wp-admin-separators
 
-#### Version: 1.0.7
+#### Version: 1.0.8
 
 [![Packagist](https://badgen.net/packagist/v/ideasonpurpose/wp-admin-separators)](https://packagist.org/packages/ideasonpurpose/wp-admin-separators)
 [![codecov](https://codecov.io/gh/ideasonpurpose/wp-admin-separators/branch/master/graph/badge.svg)](https://codecov.io/gh/ideasonpurpose/wp-admin-separators)
