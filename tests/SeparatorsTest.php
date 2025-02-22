@@ -2,14 +2,14 @@
 
 namespace IdeasOnPurpose\WP\Admin;
 
-use IdeasOnPurpose\WP\Test;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+
+use IdeasOnPurpose\WP\Test;
 
 Test\Stubs::init();
 
-/**
- * @covers \IdeasOnPurpose\WP\Admin\Separators
- */
+#[CoversClass(\IdeasOnPurpose\WP\Admin\Separators::class)]
 final class SeparatorsTest extends TestCase
 {
     public function setUp(): void
